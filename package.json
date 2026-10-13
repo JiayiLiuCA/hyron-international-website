@@ -1,0 +1,36 @@
+{
+  "name": "hyron-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "check:copy": "node scripts/check-copy.mjs",
+    "prebuild": "npm run check:copy && npm run check:font",
+    "typecheck": "next typegen && tsc --noEmit",
+    "fonts:zh": "node scripts/subset-zh-font.mjs",
+    "check:font": "node scripts/check-zh-font.mjs",
+    "copy:review": "node scripts/export-copy-review.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.0",
+    "next-intl": "^4.14.9",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "resend": "^6.32.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "subset-font": "^2.9.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

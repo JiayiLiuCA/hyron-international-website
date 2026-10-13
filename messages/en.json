@@ -1,0 +1,378 @@
+{
+  "Meta": {
+    "siteName": "HYRON",
+    "home": {
+      "title": "HYRON | Strategic Advisory, Capital Readiness & Execution",
+      "description": "HYRON provides strategic advisory, capital readiness, transaction support, professional advisor coordination, and execution support to companies and investors."
+    },
+    "about": {
+      "title": "About HYRON | Strategic Advisory & Execution Firm",
+      "description": "HYRON is a Canadian strategic advisory and execution firm for businesses, investors, and principals facing consequential decisions."
+    },
+    "services": {
+      "title": "Services | HYRON",
+      "description": "Strategic advisory, financing readiness, transaction support, real estate project advisory, operational implementation, and professional advisor coordination."
+    },
+    "howWeWork": {
+      "title": "How We Work | HYRON",
+      "description": "A disciplined five-step path from opportunity to delivery: define the mandate, establish the facts, design the strategy, mobilize resources, execute."
+    },
+    "contact": {
+      "title": "Contact | HYRON",
+      "description": "Request a confidential consultation with HYRON about a significant opportunity, capital initiative, transaction, or complex project."
+    },
+    "legal": {
+      "title": "Disclaimer & Privacy | HYRON",
+      "description": "Website disclaimer and privacy note."
+    },
+    "notFound": {
+      "title": "Page Not Found | HYRON"
+    },
+    "ogAlt": "HYRON — Strategic Advisory, Capital Readiness, Transaction Support, Execution"
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "howWeWork": "How We Work",
+    "contact": "Contact",
+    "cta": "Book a Consultation",
+    "skip": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primary": "Primary",
+    "language": "Language",
+    "homeLink": "HYRON home"
+  },
+  "Cta": {
+    "bookConfidential": "Book a Confidential Consultation",
+    "explore": "Explore Our Services",
+    "start": "Start a Conversation"
+  },
+  "Footer": {
+    "tagline": "Strategic Advisory • Capital Readiness • Transaction Support • Execution",
+    "navHeading": "Navigate",
+    "contactHeading": "Contact",
+    "disclaimer": "HYRON is a business advisory firm and does not provide legal, tax, accounting, investment, insurance, financing, or any other regulated financial service. Information on this website is general in nature and is not professional advice.",
+    "readDisclaimer": "Read the full disclaimer",
+    "copyright": "© {year} {name}. All rights reserved.",
+    "legal": "Disclaimer & Privacy"
+  },
+  "Images": {
+    "bridge": "Aerial view of a cable-stayed bridge over calm blue water",
+    "goldenGate": "A suspension bridge tower rising above a layer of fog",
+    "mountain": "A lone figure on a rocky summit above a sea of clouds",
+    "speedboat": "A boat leaving a long white wake across deep blue water",
+    "tree": "A single broad tree under a golden evening sky"
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Strategic Advisory · Capital Readiness · Execution",
+      "titleLines": ["Strategic Clarity.", "Capital Readiness.", "Decisive Execution."],
+      "subhead": "For the decisions that shape what comes next.",
+      "body": "HYRON advises companies, investors, and principals through expansion, capital initiatives, acquisitions, restructurings, and complex projects — from the first decision through disciplined execution.",
+      "scroll": "Scroll"
+    },
+    "intro": {
+      "title": "Built for High-Stakes Decisions",
+      "paragraphs": [
+        "The opportunities that matter most are rarely simple. They demand a clear commercial thesis, credible capital strategy, coordinated expertise, and the ability to execute without losing momentum.",
+        "HYRON brings those elements into a single operating framework. We define the opportunity, pressure-test the plan, mobilize the right resources, and remain engaged until the work is delivered."
+      ],
+      "listTitle": "What We Help You Do",
+      "list": [
+        "Make the next strategic move with clarity and conviction",
+        "Build a credible case for financing and capital discussions",
+        "Evaluate and structure business, real-estate, and asset-backed opportunities",
+        "Coordinate qualified financing sources and professional advisors",
+        "Convert strategic intent into accountable execution"
+      ]
+    },
+    "capabilities": {
+      "title": "Our Core Capabilities",
+      "items": [
+        {
+          "title": "Strategy & Growth Advisory",
+          "body": "We advise leadership teams on the decisions that define the next stage of the business: growth, market entry, expansion, repositioning, and restructuring. The result is not theory — it is a commercial roadmap built for action."
+        },
+        {
+          "title": "Financing Readiness & Capital Coordination",
+          "body": "Capital should be designed around the business strategy, not chased after the fact. We help clients develop a financing-ready narrative, strengthen their presentation, and coordinate a disciplined process with suitable capital sources and licensed professionals."
+        },
+        {
+          "title": "Transaction & Project Advisory",
+          "body": "Whether acquiring, selling, launching, expanding, or repositioning, clients rely on HYRON for commercial judgment, transaction discipline, and project leadership that moves an opportunity from intention to execution."
+        },
+        {
+          "title": "Execution & Operational Implementation",
+          "body": "Strategy has no value if it does not survive execution. HYRON works alongside management to set the cadence, coordinate stakeholders, resolve friction, and protect momentum through delivery."
+        },
+        {
+          "title": "Professional Advisor Coordination",
+          "body": "Complex matters often require legal, tax, accounting, insurance, valuation, and financing expertise. We help coordinate the right qualified professionals so decisions are informed, responsibilities are clear, and workstreams move together."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why HYRON",
+      "items": [
+        {
+          "title": "Commercially Rigorous",
+          "body": "Our recommendations are built around the realities that determine outcomes: cash flow, timing, governance, market conditions, execution capacity, and risk."
+        },
+        {
+          "title": "Principal-Level Attention",
+          "body": "We work directly with decision-makers on matters where discretion, judgment, and speed are non-negotiable."
+        },
+        {
+          "title": "From Advisory to Delivery",
+          "body": "Our work does not end with a presentation. We remain involved to help turn approved strategy into accountable action."
+        }
+      ]
+    },
+    "process": {
+      "title": "A Disciplined Path from Opportunity to Delivery",
+      "link": "See how we work"
+    }
+  },
+  "ClosingCta": {
+    "eyebrow": "A Better Way to Move Forward",
+    "title": "A sharper plan. A stronger position. A more certain path forward.",
+    "body": "Every engagement begins with a confidential discussion about the business, the opportunity, and the decision in front of you."
+  },
+  "About": {
+    "eyebrow": "About HYRON",
+    "title": "Advice that carries through to execution.",
+    "lead": "HYRON is a Canadian strategic advisory and execution firm for businesses, investors, and principals facing consequential decisions.",
+    "paragraphs": [
+      "We are brought in when the opportunity is material, the path is complex, and execution must be exact. Our mandates sit at the intersection of strategy, capital, transactions, operations, and professional coordination.",
+      "Our role is simple: create structure around the decision, elevate the quality of the plan, and drive the work forward with confidence."
+    ],
+    "approach": {
+      "title": "Our Approach",
+      "steps": [
+        {
+          "title": "Understand the Business",
+          "body": "We start with the commercial reality: objectives, financial position, operational capacity, stakeholders, constraints, and risk."
+        },
+        {
+          "title": "Build the Strategy",
+          "body": "We identify the key decisions, develop alternatives, assess viability, and define a clear action plan."
+        },
+        {
+          "title": "Assemble the Right Resources",
+          "body": "When specialist expertise is required, we help coordinate appropriate independent professionals and service providers."
+        },
+        {
+          "title": "Drive Implementation",
+          "body": "We establish milestones, accountability, decision points, and reporting so that the strategy is executed — not merely discussed."
+        }
+      ]
+    },
+    "serve": {
+      "title": "Who We Serve",
+      "list": [
+        "Growth-stage and established companies",
+        "Private enterprises and management teams",
+        "Investors, acquirers, and strategic buyers",
+        "Property owners, developers, and asset operators",
+        "Organizations undertaking expansion, transformation, restructuring, or complex projects"
+      ]
+    },
+    "principles": {
+      "title": "Our Principles",
+      "items": [
+        { "title": "Discretion", "body": "Sensitive business matters require careful handling." },
+        { "title": "Commercial judgment", "body": "Advice must be strategically sound and executable in the real world." },
+        { "title": "Alignment", "body": "Strategy, financing, operations, and advisors must work toward the same outcome." },
+        { "title": "Accountability", "body": "Clear mandates, defined milestones, and candid communication." }
+      ]
+    }
+  },
+  "Services": {
+    "eyebrow": "Services",
+    "title": "Six areas of work, one disciplined mandate.",
+    "lead": "Each engagement is scoped to the decision in front of you.",
+    "navLabel": "Services on this page",
+    "mandatesLabel": "Typical mandates include",
+    "outcomeLabel": "Outcome",
+    "items": {
+      "strategicAdvisory": {
+        "short": "Strategic Advisory",
+        "title": "Strategic Advisory",
+        "lead": "For owners and executives making high-impact decisions.",
+        "mandates": [
+          "Growth and expansion strategy",
+          "Market-entry and positioning plans",
+          "Business model review",
+          "Turnaround and restructuring planning",
+          "Partner, shareholder, and succession planning support",
+          "Strategic planning workshops and management roadmaps"
+        ],
+        "outcome": "A decision-ready strategy with defined priorities, commercial logic, accountable owners, and a clear route to implementation."
+      },
+      "financingReadiness": {
+        "short": "Financing Readiness",
+        "title": "Financing Readiness & Capital Advisory",
+        "lead": "For businesses preparing for financing, refinancing, acquisition capital, or major investment.",
+        "mandates": [
+          "Capital-needs assessment and funding strategy",
+          "Business-plan and financial-package preparation",
+          "Cash-flow and repayment-capacity analysis",
+          "Financing-readiness review",
+          "Capital-provider coordination",
+          "Support through information requests, due diligence, and closing workstreams"
+        ],
+        "outcome": "A more credible capital case, a better-organized process, and stronger preparedness for financing discussions.",
+        "noteLabel": "Disclosure",
+        "note": "HYRON provides business advisory, preparation, and coordination services only. We do not provide financing, make credit decisions, guarantee financing, broker securities, or provide investment services. Any financing is subject to the independent assessment and approval of the relevant capital provider."
+      },
+      "transactions": {
+        "short": "Transactions",
+        "title": "Business Acquisition, Sale & Transaction Support",
+        "lead": "For clients evaluating an acquisition, sale, partnership, asset purchase, or strategic transaction.",
+        "mandates": [
+          "Opportunity screening and commercial assessment",
+          "Preliminary valuation and deal-structure support",
+          "Buyer or seller preparation",
+          "Transaction project management",
+          "Due-diligence coordination",
+          "Coordination with legal, accounting, tax, valuation, and financing professionals",
+          "Post-closing integration planning"
+        ],
+        "outcome": "A controlled transaction process that connects commercial intent, diligence, negotiation, and implementation."
+      },
+      "realEstate": {
+        "short": "Real Estate",
+        "title": "Real Estate & Development Project Advisory",
+        "lead": "For owners and investors navigating commercial, development, redevelopment, or asset-repositioning opportunities.",
+        "mandates": [
+          "Project feasibility and commercial positioning",
+          "Development and redevelopment strategy",
+          "Capital planning and financing-readiness support",
+          "Stakeholder and consultant coordination",
+          "Project execution plans and milestone management"
+        ],
+        "outcome": "A commercially grounded plan, a coordinated delivery framework, and sharper control over execution risk."
+      },
+      "operations": {
+        "short": "Operations",
+        "title": "Operational Improvement & Implementation",
+        "lead": "For companies that need to make a plan work inside the business.",
+        "mandates": [
+          "Operating-model and process review",
+          "Growth implementation plans",
+          "Vendor and partner coordination",
+          "KPI, reporting, and accountability frameworks",
+          "Launch, expansion, and transition management",
+          "Management support during critical execution periods"
+        ],
+        "outcome": "Stronger operational control, clearer ownership, and sustained forward momentum."
+      },
+      "professionalCoordination": {
+        "short": "Professional Coordination",
+        "title": "Professional Support Coordination",
+        "lead": "For matters requiring a coordinated team of specialists.",
+        "body": "HYRON can help clients identify, organize, and coordinate independent legal counsel, accountants, tax advisors, insurance professionals, valuation specialists, and other qualified providers as appropriate to the engagement.",
+        "noteLabel": "Important",
+        "note": "HYRON does not provide legal advice or legal representation. Legal services, where needed, are delivered directly by independent, properly licensed legal professionals retained by the client."
+      }
+    }
+  },
+  "HowWeWork": {
+    "eyebrow": "How We Work",
+    "title": "A Disciplined Path from Opportunity to Delivery",
+    "lead": "Five steps take each mandate from definition to delivery, with HYRON engaged at every stage.",
+    "steps": [
+      {
+        "title": "Define the Mandate",
+        "body": "We establish the commercial objective, decision context, stakeholders, constraints, and definition of success."
+      },
+      {
+        "title": "Establish the Facts",
+        "body": "We assess the core facts, options, risks, capital considerations, and execution requirements that will shape the decision."
+      },
+      {
+        "title": "Design the Strategy",
+        "body": "We build the strategy, workstreams, governance, resource plan, milestones, and decision gates needed to move with confidence."
+      },
+      {
+        "title": "Mobilize the Right Resources",
+        "body": "We align management, suitable capital sources, and independent specialist advisors around the mandate."
+      },
+      {
+        "title": "Execute with Discipline",
+        "body": "We help manage delivery, resolve obstacles, maintain decision velocity, and keep the initiative moving toward its intended outcome."
+      }
+    ],
+    "formats": {
+      "title": "Engagement Formats",
+      "list": [
+        "Strategic advisory engagements",
+        "Project-based mandates",
+        "Transaction and financing-readiness support",
+        "Interim execution support",
+        "Ongoing advisory retainers"
+      ],
+      "closing": "Every mandate is tailored to the client's objectives, complexity, and timeline."
+    }
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Discuss What Comes Next",
+    "body": "If you are evaluating a significant opportunity, preparing for a capital initiative, navigating a transaction, or leading a complex project, HYRON can help bring structure, coordination, and momentum to the work ahead.",
+    "formTitle": "Request a confidential consultation.",
+    "details": {
+      "title": "Contact Details",
+      "office": "Office",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Hours",
+      "byAppointment": "by appointment",
+      "map": "View on Google Maps"
+    },
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "What would you like to discuss?",
+      "optional": "Optional",
+      "honeypot": "Leave this field empty",
+      "submit": "Submit Inquiry",
+      "submitting": "Sending…",
+      "notice": "Please do not send confidential financial information, legal documents, personal information, or transaction documents through this form. We will provide a secure process if an engagement proceeds.",
+      "success": "Thank you. Your inquiry has been received and we will be in touch shortly.",
+      "error": "Something went wrong and your message was not sent. Please try again, or email us directly at <link>{email}</link>.",
+      "invalid": "Please check the highlighted fields and try again.",
+      "errors": {
+        "name": "Please enter your name.",
+        "email": "Please enter a valid email address.",
+        "message": "Please tell us briefly what you would like to discuss.",
+        "tooLong": "This field is too long."
+      }
+    }
+  },
+  "Legal": {
+    "title": "Disclaimer & Privacy",
+    "disclaimer": {
+      "title": "Website Disclaimer",
+      "paragraphs": [
+        "The information on this website is provided for general informational purposes only and does not constitute legal, tax, accounting, investment, insurance, financing, or other professional advice. No client relationship is created by use of this website or by communicating with HYRON through it.",
+        "HYRON is a business advisory firm. HYRON does not provide legal representation or legal, tax, accounting, investment, insurance, or financing services, and does not provide any other regulated financial service. Where specialized services are required, clients may be referred to or work directly with independent, appropriately licensed professionals. HYRON does not guarantee financing, transaction completion, business results, or any particular outcome."
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Note",
+      "paragraphs": [
+        "Please do not submit sensitive personal, financial, legal, or confidential information through the website contact form. We will request information through an appropriate secure channel when necessary."
+      ]
+    }
+  },
+  "NotFound": {
+    "eyebrow": "404",
+    "title": "This page could not be found.",
+    "body": "The page you are looking for may have moved or no longer exists.",
+    "back": "Back to home"
+  }
+}

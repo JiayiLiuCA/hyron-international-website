@@ -1,0 +1,405 @@
+@import "tailwindcss";
+
+/* Brand tokens — brief/BRIEF.md §3.1. gold-700 darkened from #8a6a1c to reach
+   4.69:1 on ivory (AA for small text). */
+@theme {
+  --color-royal: #05368a;
+  --color-royal-900: #022258;
+  --color-royal-700: #0a3f9c;
+  --color-royal-950: #011433;
+  --color-gold: #c59a32;
+  --color-gold-300: #d9b45a;
+  --color-gold-700: #856619;
+  --color-ivory: #f3efe9;
+  --color-paper: #fbf9f5;
+  --color-ink: #1b2440;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Latin faces come first so mixed copy keeps Open Sans / Trirong for Latin
+   glyphs. CJK body text uses the visitor's system sans (Noto/Source Han Sans
+   on Android & Linux, PingFang on Apple, YaHei on Windows); CJK headlines use
+   the self-hosted Noto Serif SC subset, which only downloads on /zh. */
+@theme inline {
+  --font-sans: var(--font-open-sans), "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  --font-serif: var(--font-trirong), var(--font-noto-serif-sc), Georgia, serif;
+}
+
+@custom-variant lang-zh (&:lang(zh));
+
+/* Load-time motion (hero) and scroll cue. Defined top-level so they are always
+   emitted. Reduced-motion users get the end state (see bottom of file). */
+@keyframes hero-zoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 28px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+/* Scroll-driven parallax (progressive enhancement, see bottom of file). */
+@keyframes drift {
+  from { transform: translate3d(0, -5%, 0) scale(1.12); }
+  to { transform: translate3d(0, 5%, 0) scale(1.12); }
+}
+@keyframes hero-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, 18%, 0); }
+}
+@keyframes scroll-cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@utility hero-zoom {
+  animation: hero-zoom 3.2s var(--ease-out-expo) both;
+}
+@utility rise-in {
+  animation: rise 1.2s var(--ease-out-expo) var(--delay, 0ms) both;
+}
+@utility draw-in {
+  transform-origin: left center;
+  animation: draw 1.6s var(--ease-out-expo) var(--delay, 0ms) both;
+}
+@utility scroll-cue {
+  animation: scroll-cue 2.6s var(--ease-out-expo) infinite;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :lang(zh) body,
+  body:lang(zh) {
+    line-height: 1.85;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  :lang(en) h1, :lang(en) h2, :lang(en) h3 {
+    letter-spacing: -0.012em;
+  }
+
+  /* Chinese headings break only after punctuation (，、。), not inside a
+     phrase; a phrase longer than the line still wraps (break-word). */
+  :lang(zh) h1, :lang(zh) h2, :lang(zh) h3 {
+    letter-spacing: 0.02em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Translucent, and the text keeps its own colour: headings set line-height
+     below the fonts' ascent+descent, so each line's highlight overlaps the
+     line above it — an opaque one would hide the glyphs underneath. */
+  ::selection {
+    background-color: rgb(197 154 50 / 0.38);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-royal);
+    outline-offset: 3px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--color-gold);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  &:lang(zh) {
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 88rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 3.5rem;
+  }
+}
+
+/* Chinese headings get a roomier line-height than the Latin display sizes
+   (1.02–1.1). Unlayered on purpose so it beats per-element leading-* utilities. */
+:lang(zh) :is(h1, h2, h3) {
+  line-height: 1.25;
+}
+
+/* Outer padding of a PhotoSplit text column: lines its outer edge up with
+   .container-page (max 88rem, 3.5rem gutter) while the photo bleeds. */
+@utility split-gutter-l {
+  padding-left: max(3.5rem, calc((100vw - 88rem) / 2 + 3.5rem));
+}
+@utility split-gutter-r {
+  padding-right: max(3.5rem, calc((100vw - 88rem) / 2 + 3.5rem));
+}
+
+/* Photo inside the brand's capital "I" serif frame (brief §3.4). */
+@utility serif-frame {
+  mask-image: url("/pattern/hyron-serif-frame.svg");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  aspect-ratio: 1926 / 3478;
+}
+
+/* ---------------------------------------------------------------------------
+   Home capability strip. Mobile / touch: a grid of photo cards with all copy
+   visible. Wide pointer devices: five photo panels share one row; the hovered
+   or keyboard-focused panel opens (the first one is open by default), the
+   others show a vertical label over a darkened photo.
+   --------------------------------------------------------------------------- */
+@layer components {
+  .cap-strip {
+    display: grid;
+    gap: 0.5rem;
+  }
+  @media (width >= 40rem) {
+    .cap-strip {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .cap-link {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--color-royal-900);
+  }
+  .cap-photo {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+  .cap-scrim,
+  .cap-label {
+    display: none;
+  }
+  .cap-detail {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.75rem 1.5rem 2rem;
+  }
+}
+
+@media (width >= 64rem) and (hover: hover) {
+  .cap-strip {
+    display: flex;
+    height: clamp(34rem, 80vh, 48rem);
+  }
+  .cap-strip > li {
+    flex: 1 1 0;
+    min-width: 0;
+    transition: flex-grow 0.9s var(--ease-out-expo);
+  }
+  .cap-photo {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    aspect-ratio: auto;
+  }
+  .cap-img {
+    filter: grayscale(0.55) brightness(0.72);
+    transition: filter 0.9s var(--ease-out-expo), transform 1.4s var(--ease-out-expo);
+  }
+  .cap-scrim {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgb(1 20 51 / 0.94) 0%, rgb(1 20 51 / 0.6) 40%, rgb(1 20 51 / 0.05) 75%);
+  }
+  .cap-label {
+    display: block;
+    position: absolute;
+    bottom: 2.25rem;
+    left: 1.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    transition: opacity 0.4s ease 0.25s;
+  }
+  .cap-label:lang(zh) {
+    transform: none;
+    letter-spacing: 0.18em;
+    text-orientation: upright;
+  }
+  .cap-detail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: min(31rem, 36vw);
+    padding: 2.5rem;
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    transition: opacity 0.35s ease, transform 0.9s var(--ease-out-expo);
+  }
+  :is(.cap-strip > li:is(:hover, :focus-within), .cap-strip:not(:has(> li:is(:hover, :focus-within))) > li:first-child) {
+    flex-grow: 3.4;
+
+    .cap-img {
+      filter: none;
+      transform: scale(1.03);
+    }
+    .cap-label {
+      opacity: 0;
+      transition-delay: 0s;
+    }
+    .cap-detail {
+      opacity: 1;
+      transform: none;
+      transition-delay: 0.3s;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll reveal — photos wipe in and gold rules draw; text is not animated.
+   Elements are only hidden when scripting is on and the visitor has not asked
+   for reduced motion; the Reveal component adds `.is-revealed`.
+   --------------------------------------------------------------------------- */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    transition:
+      opacity 1.1s var(--ease-out-expo),
+      transform 1.3s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal]:not(.is-revealed) {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  [data-reveal="fade"]:not(.is-revealed) {
+    transform: none;
+  }
+
+  [data-reveal="line"] {
+    transform-origin: left center;
+    transition: transform 1.6s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal="line"]:not(.is-revealed) {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+
+  /* Image wipes in from below while settling from a slight zoom. */
+  [data-reveal="image"] {
+    transition: clip-path 1.6s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal="image"] img {
+    transition: transform 2.4s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal="image"]:not(.is-revealed) {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(16% 0 0 0);
+  }
+
+  [data-reveal="image"]:not(.is-revealed) img {
+    transform: scale(1.12);
+  }
+}
+
+/* Scroll-driven parallax: `.parallax` drifts a photo inside its (overflow
+   hidden) frame; `.hero-parallax` lets a hero photo lag behind the page. Only
+   where the browser supports scroll timelines; otherwise photos sit still. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .parallax {
+      animation: drift linear both;
+      animation-timeline: view();
+      animation-range: cover;
+    }
+    .hero-parallax {
+      animation: hero-drift linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 100vh;
+    }
+    .timeline-fill {
+      transform-origin: center top;
+      animation: grow-y linear both;
+      /* The scrollport is collapsed to a line 45% down the viewport, so the
+         fill's leading edge tracks that line. */
+      animation-timeline: view(block 45% 55%);
+      animation-range: cover;
+    }
+  }
+}
+
+@keyframes grow-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
