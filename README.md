@@ -39,4 +39,4 @@ Next.js 16 (App Router, Cache Components) + Tailwind CSS v4 + next-intl. English
 
 ## Deploy (Vercel)
 
-Root Directory `site`, framework Next.js, env vars from `.env.example`. Before pointing the domain at Vercel, record the existing MX/TXT DNS records so the `info@` mailbox keeps working (BRIEF §6.7).
+This repository contains only the site, so leave Root Directory at the repository root; framework Next.js, env vars from `.env.example`. The brief and design sources (referenced as `../brief/…` in scripts and comments) live outside this repo. Before pointing the domain at Vercel, record the existing MX/TXT DNS records so the `info@` mailbox keeps working (BRIEF §6.7).
