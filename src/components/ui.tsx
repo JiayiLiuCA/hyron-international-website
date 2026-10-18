@@ -106,7 +106,7 @@ export function keepHyphenated(text: ReactNode): ReactNode {
 
 const HAN = /\p{Script=Han}/u;
 /** Never split these across lines (the word segmenter splits 海润|国际 etc.). */
-const ZH_NO_BREAK = ['海润国际', '一以贯之', '下一步', '前路', '六个'];
+const ZH_NO_BREAK = ['海润国际', '下一步', '前路', '六大'];
 const zhWords = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter('zh-Hans', { granularity: 'word' }) : null;
 
 /**
