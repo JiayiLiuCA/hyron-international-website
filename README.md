@@ -20,7 +20,7 @@ Next.js 16 (App Router, Cache Components) + Tailwind CSS v4 + next-intl. English
 - Routes: `src/app/[locale]/…` (`/en`, `/zh`); `src/proxy.ts` redirects locale-less URLs by cookie / `Accept-Language`. Old Squarespace URLs are redirected in `next.config.ts`.
 - Brand tokens, motion and reveal styles: `src/app/globals.css`. Scroll reveal is React state in `src/components/Reveal.tsx` (photo frames, gold rules); everything respects `prefers-reduced-motion`.
 - Fonts: Trirong 600 (stand-in for Collier) + Open Sans via `next/font/google`; Chinese headlines use a self-hosted Noto Serif SC 600 subset (`src/fonts/`); Chinese body text uses the system CJK sans.
-- Contact form: `src/app/[locale]/contact/actions.ts` (Server Action + zod + honeypot, Resend). Env vars in `.env.example`.
+- Contact form: `src/lib/contact.ts` (client action for `useActionState` + zod + honeypot, posts to Web3Forms from the browser — its free plan rejects server-side calls). Env var in `.env.example`.
 
 ## Photo sources
 

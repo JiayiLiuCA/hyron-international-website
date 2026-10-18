@@ -2,11 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useRef } from 'react';
-import {
-  submitInquiry,
-  type ContactField,
-  type ContactState,
-} from '@/app/[locale]/contact/actions';
+import { submitInquiry, type ContactField, type ContactState } from '@/lib/contact';
 import { cn } from '@/lib/cn';
 import { ArrowIcon } from './ui';
 

@@ -1,8 +1,4 @@
-'use server';
-
-import { Resend } from 'resend';
 import { z } from 'zod';
-import { site } from '@/config/site';
 
 export type ContactField = 'name' | 'company' | 'email' | 'phone' | 'message';
 export type FieldError = 'required' | 'email' | 'tooLong';
@@ -25,6 +21,13 @@ const schema = z.object({
 
 const FIELDS: ContactField[] = ['name', 'company', 'email', 'phone', 'message'];
 
+/**
+ * Runs in the browser: Web3Forms rejects server-side submissions on the free
+ * plan ("Use our API in client side … Pro plan is required"), so this is a
+ * client action for useActionState rather than a Server Action. The access key
+ * is public by design; it only lets a form deliver to the inbox it was
+ * created for.
+ */
 export async function submitInquiry(
   _prev: ContactState,
   formData: FormData,
@@ -50,33 +53,35 @@ export async function submitInquiry(
     return { status: 'invalid', fieldErrors, values };
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
+  // Inlined at build time: redeploy after setting it in Vercel.
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+  if (!accessKey) {
     // Mail is not configured yet (brief §6.3): fail softly and let the UI show
-    // the public email address instead of throwing a 500.
-    console.warn('[contact] RESEND_API_KEY is not set; inquiry was not sent.');
+    // the public email address instead.
+    console.warn('[contact] NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY is not set; inquiry was not sent.');
     return { status: 'error', values };
   }
 
   const { name, company, email, phone, message } = parsed.data;
   try {
-    const resend = new Resend(apiKey);
-    const { error } = await resend.emails.send({
-      from: process.env.CONTACT_FROM_EMAIL || `HYRON Website <website@hyroninternational.com>`,
-      to: process.env.CONTACT_TO_EMAIL || site.email,
-      replyTo: email,
-      subject: `Website inquiry — ${name}${company ? ` (${company})` : ''}`,
-      text: [
-        `Name: ${name}`,
-        `Company: ${company || '—'}`,
-        `Email: ${email}`,
-        `Phone: ${phone || '—'}`,
-        '',
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: accessKey,
+        subject: `Website inquiry — ${name}${company ? ` (${company})` : ''}`,
+        from_name: 'HYRON Website',
+        // Web3Forms sets Reply-To from `email`.
+        name,
+        email,
+        company: company || '—',
+        phone: phone || '—',
         message,
-      ].join('\n'),
+      }),
     });
-    if (error) {
-      console.error('[contact] Resend error', error);
+    const body = (await res.json().catch(() => null)) as { success?: boolean; message?: string } | null;
+    if (!res.ok || !body?.success) {
+      console.error('[contact] Web3Forms error', res.status, body?.message);
       return { status: 'error', values };
     }
     return { status: 'success' };
